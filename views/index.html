@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% raw %}
+<section ng-controller="HomeController">
+  <div class="container">
+    <h1>Home accounting</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <label for="txtName">Benvenuto, dimmi chi sei?</label>
+        <input id="txtName" type="text" class="form-control" ng-model="name" />
+      </div>
+    </div>
+  <br>
+    <div class="row">
+      <div class="col-md-4">
+      <button class="btn btn-default" ng-click="go()">Entra</button>
+        </div>
+    </div>
+  </div>
+</section>
+{% endraw %}
+{% endblock %}

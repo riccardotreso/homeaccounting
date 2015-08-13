@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1>Bentornato {{ result.peopleName }}</h1>
+
+<script>
+    var res = {{ JSON.stringify(result) }},
+        userId = "{{ userId }}";
+</script>
+
+
+{% raw %}
+<section ng-controller="RoomController">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+                <p class="input-group">
+                    <input type="text" class="form-control" placeholder="Data" datepicker-popup="dd/MM/yyyy" ng-model="newDate" is-open="status.opened" min-date="'2000-06-22'" max-date="'2020-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+                </p>
+            </div>
+            <div class="col-md-3">
+
+                <input class="form-control" placeholder="Luogo" ng-model="newLocation"/>
+            </div>
+            <div class="col-md-3">
+
+                <input class="form-control" placeholder="Costo" ng-model="newAmount"/>
+            </div>
+            <div class="col-md-3">
+
+                <button type="button" ng-click="addTransaction()" class="btn btn-sm btn-success">
+                    <i class="glyphicon glyphicon-plus">
+                    </i>
+                </button>
+            </div>
+        </div>
+
+        <table st-table="transactions" class="table table-striped">
+            <thead>
+            <tr>
+                <th st-sort="date">Data</th>
+                <th st-sort="location">Luogo</th>
+                <th st-sort="amount">Costo</th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <th colspan="4"><input st-search="" class="form-control" placeholder="Ricerca..." type="text"/></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in transactions">
+                <td>{{row.date | date:'dd/MM/yyyy'}}</td>
+                <td>{{row.location}}</td>
+                <td>{{row.amount | currency}}</td>
+                <td>&nbsp;</td>
+            </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-default" ng-disabled="data.transactionInSharing" ng-click="confirm()">Conferma e invia movimenti</button>
+    </div>
+</section>
+{% endraw %}
+{% endblock %}

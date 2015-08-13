@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1>Room disponibili</h1>
+
+<script>
+    var userId = "{{ userId }}",
+        res = {};
+</script>
+
+
+{% raw %}
+<section ng-controller="RoomController" ng-init="getAllRooms()">
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-4" style="padding-left: 0px">
+                <input class="form-control" placeholder="Nuova room" ng-model="newRoom"/>
+            </div>
+            <div class="col-md-8">
+                <button type="button" ng-click="addRoom()" class="btn btn-sm btn-success">
+                    <i class="glyphicon glyphicon-plus">
+                    </i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 room-box room-all" ng-repeat="room in rooms" >
+                <i class="glyphicon glyphicon-plus room-plus-icon" ng-click="enterRoom(room)"></i>
+                <i class="glyphicon glyphicon-log-in room-icon"></i>
+                <p class="room-name">{{room.name}}</p>
+                <div class="room-count">{{room.count}}</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endraw %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1>Queste le tue room</h1>
+
+<script>
+    var res = {{ JSON.stringify(result) }},
+        userId = "{{ userId }}";
+</script>
+
+
+{% raw %}
+<section ng-controller="PeopleController">
+    <div class="container">
+        <div ng-repeat="room in data">
+            <div class="col-md-4 room-box" ng-click="goToRoom(room)">
+                <i class="glyphicon glyphicon-log-in room-icon"></i>
+                <p class="room-name">{{room.name}}</p>
+                <div class="room-count">{{room.count}}</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endraw %}
+{% endblock %}

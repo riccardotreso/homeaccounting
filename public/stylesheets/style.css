@@ -1,0 +1,106 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.icon{
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.go{
+  background-image: url("/images/148025-200.png");
+}
+
+.insert{
+  background-image: url("/images/60246-200.png");
+}
+
+.st-sort-ascent:before{
+  content: '\25B2';
+}
+
+.st-sort-descent:before{
+  content: '\25BC';
+}
+
+
+.room-box{
+  background: #4F5BC3;
+  cursor: pointer;
+  padding: 20px 5px;
+  text-align: center;
+  border-radius: 4px;
+  display: block;
+  height: 100px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: #fff;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 300px;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  transition-property: all;
+  transition-duration: 0.3s;
+  margin: 20px 20px 0px 0px;
+}
+
+.room-box:hover{
+  background: #27538C
+}
+
+.room-all{
+  cursor: default;
+}
+
+.room-all:hover{
+  background: #4F5BC3;
+}
+
+.room-icon{
+  font-size: 25px;
+  padding-bottom: 10px
+}
+
+.room-name{
+  margin: 0;
+}
+
+.room-count{
+  float: right;
+  color: #FFAA3D;
+}
+
+
+
+.room-plus-icon {
+  position: absolute !important;
+  float: left;
+  font-size: 20px;
+  /*background-color: #5cb85c;*/
+  padding-left: 2px;
+  padding-bottom: 2px;
+  left: 91%;
+  top: 9% !important;
+  border-radius: 10px;
+  color: #ffffff;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.room-plus-icon:hover{
+  background: #27538C;
+  cursor: pointer;
+}
