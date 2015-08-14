@@ -7,6 +7,11 @@
 
   <link href="{{PATH}}/stylesheets/style.css" rel="stylesheet" type="text/css" />
   <link href="{{PATH}}/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="{{PATH}}/lib/angular.min.js" ></script>
+  <!--script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script-->
+  <script type="text/javascript" src="{{PATH}}/lib/ui-bootstrap-tpls-0.13.3.js" ></script>
+  <script type="text/javascript" src="{{PATH}}/lib/smart-table.js" ></script>
+  <script type="text/javascript" src="{{PATH}}/javascripts/main.js"></script>
   <script>
     var PATH = "{{ PATH }}";
   </script>
@@ -52,11 +57,5 @@
     {% block content %}{% endblock %}
   </section>
 </section>
-<script type="text/javascript" src="{{PATH}}/lib/angular.min.js" ></script>
-<!--script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script-->
-
-<script type="text/javascript" src="{{PATH}}/lib/ui-bootstrap-tpls-0.13.3.js" ></script>
-<script type="text/javascript" src="{{PATH}}/lib/smart-table.js" ></script>
-<script type="text/javascript" src="{{PATH}}/javascripts/main.js"></script>
 </body>
 </html>

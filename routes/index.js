@@ -20,7 +20,7 @@ router.get('/room/:peopleId/:roomId', function(req, res) {
       if (err)
         res.render('error', err);
       else
-        res.render('room', _.extend(baseResponse, {result: doc, userId:peopleId}));
+        res.render('room', _.extend({result: doc, userId:peopleId}, baseResponse));
     });
 
 
@@ -29,24 +29,22 @@ router.get('/room/:peopleId/:roomId', function(req, res) {
 router.get('/room/:peopleId', function(req, res) {
   var peopleId = req.params.peopleId;
 
-  res.render('allrooms', _.extend(baseResponse, {result: null, userId:peopleId}));
+  res.render('allrooms', _.extend({result: null, userId:peopleId}, baseResponse));
 
 });
 
 router.get('/people/:id', function(req, res) {
   var id = req.params.id;
-
-
   RoomController.getPeopleRooms(id, function(err, doc){
     if(err)
       res.render('error', err);
     else
-      res.render('user', _.extend(baseResponse, {result:doc, userId: id}));
+      res.render('user', _.extend({result:doc, userId: id}, baseResponse));
   });
 });
 
 router.get('/people', function(req, res) {
-  res.render('newuser');
+  res.render('newuser', baseResponse);
 });
 
 
