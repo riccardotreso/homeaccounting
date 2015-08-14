@@ -13,7 +13,7 @@
                     name : $scope.name
                 })
                     .success(function(data) {
-                        $window.location.href = "people/" + data.id;
+                        $window.location.href = PATH + "people/" + data.id;
                     })
                     .error(function(data) {
                         console.dir(data);
@@ -38,7 +38,7 @@
                     email: $scope.email
                 })
                 .success(function (data) {
-                        $window.location.href = "room/" + data.id;
+                        $window.location.href = PATH + "room/" + data.id;
 
                 })
                 .error(function (data) {
