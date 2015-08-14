@@ -1,11 +1,13 @@
 var express = require('express'),
     router = express.Router(),
     UserController = require('../controllers/people'),
-    RoomController = require('../controllers/room');
+    RoomController = require('../controllers/room'),
+    baseResponse = require('../config/baseResponse'),
+    _ = require('lodash');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('index', baseResponse);
 });
 
 
@@ -18,7 +20,7 @@ router.get('/room/:peopleId/:roomId', function(req, res) {
       if (err)
         res.render('error', err);
       else
-        res.render('room', {result: doc, userId:peopleId});
+        res.render('room', _.extend(baseResponse, {result: doc, userId:peopleId}));
     });
 
 
@@ -27,7 +29,7 @@ router.get('/room/:peopleId/:roomId', function(req, res) {
 router.get('/room/:peopleId', function(req, res) {
   var peopleId = req.params.peopleId;
 
-  res.render('allrooms', {result: null, userId:peopleId});
+  res.render('allrooms', _.extend(baseResponse, {result: null, userId:peopleId}));
 
 });
 
@@ -39,7 +41,7 @@ router.get('/people/:id', function(req, res) {
     if(err)
       res.render('error', err);
     else
-      res.render('user', {result:doc, userId: id});
+      res.render('user', _.extend(baseResponse, {result:doc, userId: id}));
   });
 });
 

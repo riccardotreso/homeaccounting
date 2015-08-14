@@ -9,7 +9,7 @@
             $scope.name = '';
 
             $scope.go = function(){
-                $http.post('/api/v1/people', {
+                $http.post(PATH + '/api/v1/people', {
                     name : $scope.name
                 })
                     .success(function(data) {
@@ -32,7 +32,7 @@
 
             $scope.insert = function() {
 
-                $http.post('/api/v1/people/insert', {
+                $http.post(PATH + '/api/v1/people/insert', {
                     name: $scope.name,
                     surname: $scope.surname,
                     email: $scope.email
@@ -92,7 +92,7 @@
 
 
             $scope.addRoom = function(){
-                $http.post('/api/v1/rooms/new', {
+                $http.post(PATH + '/api/v1/rooms/new', {
                     name: $scope.newRoom
                 })
                 .success(function (data) {
@@ -105,7 +105,7 @@
 
             $scope.addTransaction = function() {
 
-                $http.post('/api/v1/transaction/insert', {
+                $http.post(PATH + '/api/v1/transaction/insert', {
                     roomId: $scope.data.roomId,
                     peopleId: $scope.data.peopleId,
                     date: $scope.newDate,
@@ -124,7 +124,7 @@
 
             $scope.confirm = function(){
 
-                $http.post('/api/v1/transaction/confirm', {
+                $http.post(PATH + '/api/v1/transaction/confirm', {
                     roomId: $scope.data.roomId,
                     peopleId: $scope.data.peopleId
                 })
@@ -139,7 +139,7 @@
 
             $scope.getAllRooms = function(){
 
-                $http.get('/api/v1/rooms/' + userId)
+                $http.get(PATH + '/api/v1/rooms/' + userId)
                     .success(function (data) {
                         $scope.rooms = data;
                     })
@@ -149,7 +149,7 @@
             };
 
             $scope.enterRoom = function(room){
-                $http.post('/api/v1/rooms/add', {
+                $http.post(PATH + '/api/v1/rooms/add', {
                     roomId: room.id,
                     peopleId: userId
                 })

@@ -5,8 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="{{PATH}}/stylesheets/style.css" rel="stylesheet" type="text/css" />
+  <link href="{{PATH}}/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script>
+    var PATH = "{{ PATH }}";
+  </script>
 </head>
 <body ng-app="homeAccounting">
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -26,16 +29,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         {% if userId != '' %}
-        <li><a href="/people/{{userId}}">Home</a></li>
-        <li><a href="/room/{{userId}}">Room</a></li>
+        <li><a href="{{PATH}}/people/{{userId}}">Home</a></li>
+        <li><a href="{{PATH}}/room/{{userId}}">Room</a></li>
         {% else %}
-        <li><a href="/">Home</a></li>
-        <li><a href="/people">New account</a></li>
+        <li><a href="{{PATH}}/">Home</a></li>
+        <li><a href="{{PATH}}/people">New account</a></li>
         {% endif %}
       </ul>
       {% if userId != '' %}
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/"> <i class="glyphicon glyphicon-log-out"></i>   Log off</a></li>
+        <li><a href="{{PATH}}/"> <i class="glyphicon glyphicon-log-out"></i>   Log off</a></li>
       </ul>
       {% endif %}
 
@@ -49,11 +52,11 @@
     {% block content %}{% endblock %}
   </section>
 </section>
-<script type="text/javascript" src="/lib/angular.min.js" ></script>
+<script type="text/javascript" src="{{PATH}}/lib/angular.min.js" ></script>
 <!--script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script-->
 
-<script type="text/javascript" src="/lib/ui-bootstrap-tpls-0.13.3.js" ></script>
-<script type="text/javascript" src="/lib/smart-table.js" ></script>
-<script type="text/javascript" src="/javascripts/main.js"></script>
+<script type="text/javascript" src="{{PATH}}/lib/ui-bootstrap-tpls-0.13.3.js" ></script>
+<script type="text/javascript" src="{{PATH}}/lib/smart-table.js" ></script>
+<script type="text/javascript" src="{{PATH}}/javascripts/main.js"></script>
 </body>
 </html>
